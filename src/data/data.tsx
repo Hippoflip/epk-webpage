@@ -1,32 +1,18 @@
 import {
-  AcademicCapIcon,
   CalendarIcon,
   DownloadIcon,
-  FlagIcon,
   MapIcon,
+  MusicNoteIcon,
   OfficeBuildingIcon,
-  SparklesIcon,
 } from '@heroicons/react/outline';
 
-import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
-import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
-import heroImage from '../images/header-background.webp';
+import heroImage from '../images/vinyls.webp'; //TODO: credit @minkmingle on Unsplash
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
 import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
-import profilepic from '../images/profilepic.jpg';
-import testimonialImage from '../images/testimonial.webp';
+import profilepic from '../images/hippoflip.jpg';
+import testimonialImage from '../images/crowd.webp'; //TODO: credit @tijsvl on Unsplash
 import {
   About,
   ContactSection,
@@ -39,13 +25,21 @@ import {
   TestimonialSection,
   TimelineItem,
 } from './dataDef';
+import AppleMusicIcon from '../components/Icon/AppleMusicIcon';
+import BeatportIcon from '../components/Icon/BeatportIcon';
+import BandCampIcon from '../components/Icon/BandCampIcon';
+import SoundCloudIcon from '../components/Icon/SoundCloudIcon';
+import SpotifyIcon from '../components/Icon/SpotifyIcon';
+import FacebookIcon from '../components/Icon/FacebookIcon';
+import GithubIcon from '../components/Icon/GithubIcon';
+import InstagramIcon from '../components/Icon/InstagramIcon';
 
 /**
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Hippoflip Artist Site',
+  description: "Portfolio website of dubstep producer Hippoflip, built with Tim Baker's react resume template",
 };
 
 /**
@@ -55,12 +49,21 @@ export const SectionId = {
   Hero: 'hero',
   About: 'about',
   Contact: 'contact',
-  Portfolio: 'portfolio',
-  Resume: 'resume',
+  Portfolio: 'releases',
+  Resume: 'music',
   Skills: 'skills',
   Stats: 'stats',
   Testimonials: 'testimonials',
 } as const;
+/**
+ * TODO list : 
+ *  - Press Kit ?
+ *  - artist bio : make shorter ?
+ *  - promotional photos
+ *  - Video section ?
+ *  - contact details : finish form (use https://sendgrid.com/pricing/)
+ *  - host on GitHub ?
+ */
 
 export type SectionId = typeof SectionId[keyof typeof SectionId];
 
@@ -69,25 +72,23 @@ export type SectionId = typeof SectionId[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  name: `Hippoflip`,
   description: (
     <>
+    <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+      I'm a French <strong className="text-stone-100">electronic music producer</strong> and DJ, 
+      focusing on <strong className="text-stone-100">Deep Dubstep/Dub</strong> music, mostly at 140bpm.
+    </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        So far I've released music on <a href="https://noizionrecordz.bandcamp.com/">Noizion Recordz</a> (FR) 
+        and <a href="https://fatkidonfire.com/label/">FatKidOnFire</a> (NL/UK).
       </p>
     </>
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
-      text: 'Resume',
+      href: '/assets/presskit.pdf',//TODO
+      text: 'Press kit',
       primary: true,
       Icon: DownloadIcon,
     },
@@ -104,205 +105,59 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `Musician since childhood, Hippoflip used to play the saxophone in several marching and 
+  jazz bands. Over the years, he trained in electronic music production by experimenting and learning from 
+  educational content producers such as Mr. Bill or Tom Cosm. Now, he produces a blend of dub/dubstep influenced 
+  by Jazz, Hip-hop and Drum'n Bass. Passionate about soundsystem culture, he draws inspiration from the 
+  contemporary Deep Dubstep scene (Kaiju, DE-TÜ, Ternion Sound, Egoless, Quasar, Kercha, ...). In early 2022 
+  he signs his debut EP entitled “Monsters” on Noizion Recordz, following with a four track release on 
+  FatKidOnFire (FKOFd058).`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: OfficeBuildingIcon},
+    {label: 'Location', text: 'Paris, FR', Icon: MapIcon},
+    {label: 'Age', text: '30', Icon: CalendarIcon},
+    {label: 'Genres', text: 'Deep Dubstep, Deep Dub, Psy Dub', Icon: MusicNoteIcon},
+    {label: 'Labels', text: 'Noizion Recordz, FatKidOnFire', Icon: OfficeBuildingIcon},
   ],
 };
 
 /**
+ * Resume section -- TODO: Standardize resume contact format or offer MDX
+ */
+export const education: TimelineItem[] = []; //TODO: music
+export const experience: TimelineItem[] = []; //TODO: photos
+
+/**
  * Skills section
  */
-export const skills: SkillGroup[] = [
-  {
-    name: 'Spoken languages',
-    skills: [
-      {
-        name: 'English',
-        level: 10,
-      },
-      {
-        name: 'French',
-        level: 4,
-      },
-      {
-        name: 'Spanish',
-        level: 3,
-      },
-    ],
-  },
-  {
-    name: 'Frontend development',
-    skills: [
-      {
-        name: 'React',
-        level: 9,
-      },
-      {
-        name: 'Typescript',
-        level: 7,
-      },
-      {
-        name: 'GraphQL',
-        level: 6,
-      },
-    ],
-  },
-  {
-    name: 'Backend development',
-    skills: [
-      {
-        name: 'Node.js',
-        level: 8,
-      },
-      {
-        name: 'Rust',
-        level: 5,
-      },
-      {
-        name: 'Golang',
-        level: 4,
-      },
-    ],
-  },
-  {
-    name: 'Mobile development',
-    skills: [
-      {
-        name: 'React Native',
-        level: 9,
-      },
-      {
-        name: 'Flutter',
-        level: 4,
-      },
-      {
-        name: 'Swift',
-        level: 3,
-      },
-    ],
-  },
-];
+export const skills: SkillGroup[] = []; //TODO: videos
 
 /**
  * Portfolio section
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
+    title: 'Monsters EP (NZN028)',
+    description: 'April 1st 2022 on Noizion Recordz',
+    url: 'https://hippoflip.bandcamp.com/album/monsters-ep',
     image: porfolioImage1,
   },
   {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
+    title: 'FKOFd058',
+    description: 'October 7th 2022 on FatKidOnFire',
+    url: 'https://fkofd.bandcamp.com/album/fkofd058',
     image: porfolioImage2,
   },
   {
-    title: 'Project title 3',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
+    title: 'Guest mix @ Le Tonnerre',
+    description: 'October 20th 2022',
+    url: 'https://soundcloud.com/zoneestradio/le-1',
     image: porfolioImage3,
   },
   {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
+    title: 'Guest mix @ Subtle Radio',
+    description: 'TBA',
+    url: 'https://soundcloud.com/',
     image: porfolioImage4,
-  },
-  {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage5,
-  },
-  {
-    title: 'Project title 6',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage6,
-  },
-  {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage7,
-  },
-  {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage8,
-  },
-  {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage9,
-  },
-  {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage10,
-  },
-  {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage11,
-  },
-];
-
-/**
- * Resume section -- TODO: Standardize resume contact format or offer MDX
- */
-export const education: TimelineItem[] = [
-  {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
-  },
-  {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
-  },
-];
-
-export const experience: TimelineItem[] = [
-  {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
-  },
-  {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
   },
 ];
 
@@ -314,17 +169,17 @@ export const testimonial: TestimonialSection = {
   testimonials: [
     {
       name: 'John Doe',
-      text: 'Use this as an opportunity to promote what it is like to work with you. High value testimonials include ones from current or past co-workers, managers, or from happy clients.',
+      text: 'TODO: get a testimonial from Noizion guys',
       image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
     },
     {
       name: 'Jane Doe',
-      text: 'Here you should write some nice things that someone has said about you. Encourage them to be specific and include important details (notes about a project you were on together, impressive quality produced, etc).',
+      text: 'TODO: get one from FKOF maybe ?',
       image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
     },
     {
       name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
+      text: 'TODO: maybe even Andrew ? idk, could work',
       image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
     },
   ],
@@ -336,28 +191,38 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  description: 'Feel free to contact me on any platform, although I would be more reactive to SoundCloud or Instagram messages.',
   items: [
-    {
-      type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
-    },
+    // {
+    //   type: ContactType.Email,
+    //   text: 'hippod.music@gmail.com',
+    //   href: 'mailto:hippod.music@gmail.com',
+    // },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
+      text: 'Paris, France',
+      href: 'https://www.google.com/maps/place/Paris/@48.8820187,-5.0724719,5.3z',
     },
     {
       type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      text: '@hippoflip_dub',
+      href: 'https://www.instagram.com/hippoflip_dub/',
     },
     {
-      type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      type: ContactType.SoundCloud,
+      text: 'Hippoflip',
+      href: 'https://www.soundcloud.com/hippoflip/',
     },
+    {
+      type: ContactType.Facebook,
+      text: 'Hippoflip',
+      href: 'https://www.facebook.com/hippoflip/',
+    },
+    // {
+    //   type: ContactType.Github,
+    //   text: 'hippoflip',
+    //   href: 'https://github.com/hippoflip',
+    // },
   ],
 };
 
@@ -365,9 +230,12 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tbakerx/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/hippoflip_dub/'},
+  {label: 'SoundCloud', Icon: SoundCloudIcon, href: 'https://www.soundcloud.com/hippoflip/'},
+  {label: 'Bandcamp', Icon: BandCampIcon, href: 'https://hippoflip.bandcamp.com/'},
+  {label: 'Beatport', Icon: BeatportIcon, href: 'https://www.beatport.com/artist/hippoflip/1043273'},
+  {label: 'Facebook', Icon: FacebookIcon, href: 'https://www.facebook.com/hippoflip/'},
+  {label: 'Apple Music', Icon: AppleMusicIcon, href: 'https://music.apple.com/fr/artist/hippoflip/1517369878'},
+  {label: 'Spotify', Icon: SpotifyIcon, href: 'https://open.spotify.com/artist/5zrgKTyQwPeier8VxB6DAR'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/hippoflip'},
 ];

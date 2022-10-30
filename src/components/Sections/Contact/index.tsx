@@ -7,6 +7,8 @@ import {ContactType, ContactValue} from '../../../data/dataDef';
 import FacebookIcon from '../../Icon/FacebookIcon';
 import GithubIcon from '../../Icon/GithubIcon';
 import InstagramIcon from '../../Icon/InstagramIcon';
+import SoundCloudIcon from '../../Icon/SoundCloudIcon';
+import BandCampIcon from '../../Icon/BandCampIcon';
 import LinkedInIcon from '../../Icon/LinkedInIcon';
 import TwitterIcon from '../../Icon/TwitterIcon';
 import Section from '../../Layout/Section';
@@ -21,6 +23,8 @@ const ContactValueMap: Record<ContactType, ContactValue> = {
   [ContactType.Facebook]: {Icon: FacebookIcon, srLabel: 'Facebook'},
   [ContactType.Twitter]: {Icon: TwitterIcon, srLabel: 'Twitter'},
   [ContactType.Instagram]: {Icon: InstagramIcon, srLabel: 'Instagram'},
+  [ContactType.SoundCloud]: {Icon: SoundCloudIcon, srLabel: 'SoundCloud'},
+  [ContactType.BandCamp]: {Icon: BandCampIcon, srLabel: 'BandCamp'},
 };
 
 const Contact: FC = memo(() => {

@@ -17,10 +17,12 @@ const Footer: FC = memo(() => (
       <div className="flex gap-x-4 text-neutral-500">
         <Socials />
       </div>
-      <span className="text-sm text-neutral-700">© Copyright 2022 Tim Baker</span>
+      <span className="text-sm text-neutral-700"><a href="https://github.com/tbakerx/react-resume-template">Website template from Tim Baker on GitHub</a></span>
     </div>
   </div>
 ));
 
 Footer.displayName = 'Footer';
 export default Footer;
+
+//<span className="text-sm text-neutral-700">© Copyright 2022 Tim Baker</span>
