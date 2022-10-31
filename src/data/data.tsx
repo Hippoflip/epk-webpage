@@ -168,12 +168,12 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
-      name: 'John Doe',
-      text: 'TODO: get a testimonial from Noizion guys',
+      name: 'Hubwar (head of Noizion Recordz)', //TODO: translate and add photo
+      text: 'L\'originalité des compositions, sa précision dans le sound-design et ses clins d\'oeil à la culture « sound-system » m\'ont convaincu de signer Hippoflip dès la première écoute.',
       image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
     },
     {
-      name: 'Jane Doe',
+      name: 'Laurent Garnier', //TODO: translate and add photo
       text: 'TODO: get one from FKOF maybe ?',
       image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
     },

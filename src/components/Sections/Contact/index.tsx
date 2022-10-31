@@ -4,12 +4,12 @@ import {FC, memo} from 'react';
 
 import {contact, SectionId} from '../../../data/data';
 import {ContactType, ContactValue} from '../../../data/dataDef';
+import BandCampIcon from '../../Icon/BandCampIcon';
 import FacebookIcon from '../../Icon/FacebookIcon';
 import GithubIcon from '../../Icon/GithubIcon';
 import InstagramIcon from '../../Icon/InstagramIcon';
-import SoundCloudIcon from '../../Icon/SoundCloudIcon';
-import BandCampIcon from '../../Icon/BandCampIcon';
 import LinkedInIcon from '../../Icon/LinkedInIcon';
+import SoundCloudIcon from '../../Icon/SoundCloudIcon';
 import TwitterIcon from '../../Icon/TwitterIcon';
 import Section from '../../Layout/Section';
 import ContactForm from './ContactForm';
