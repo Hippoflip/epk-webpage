@@ -1,5 +1,5 @@
 # Hippoflip's EPK website
-Source code for dubstep producer Hippoflip's Electronic Press Kit (EPK), [which can be viewed here.](https://github.com/Hippoflip/epk-webpage)
+Source code for dubstep producer Hippoflip's Electronic Press Kit (EPK), [which can be viewed here.](https://hippoflip.vercel.app/)
 
 This project is based on [@tbakerx](https://github.com/tbakerx)'s React JS Resume website template (under MIT License). Below is the first section of the original read-me :
 

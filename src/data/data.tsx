@@ -1,6 +1,6 @@
 import {
   CalendarIcon,
-  DownloadIcon,
+  //DownloadIcon,
   MapIcon,
   MusicNoteIcon,
   OfficeBuildingIcon,
@@ -13,6 +13,7 @@ import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
 import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
 import profilepic from '../images/hippoflip.jpg';
 import testimonialImage from '../images/crowd.webp'; //TODO: credit @tijsvl on Unsplash
+import hubwarImage from '../images/testimonials/hubwar.jpg'
 import {
   About,
   ContactSection,
@@ -39,7 +40,7 @@ import InstagramIcon from '../components/Icon/InstagramIcon';
  */
 export const homePageMeta: HomepageMeta = {
   title: 'Hippoflip Artist Site',
-  description: "Portfolio website of dubstep producer Hippoflip, built with Tim Baker's react resume template",
+  description: "Portfolio website of dubstep producer Hippoflip, built with Tim Baker's ReactJS resume template",
 };
 
 /**
@@ -57,12 +58,11 @@ export const SectionId = {
 } as const;
 /**
  * TODO list : 
- *  - Press Kit ?
- *  - artist bio : make shorter ?
- *  - promotional photos
+ *  - Better hero image
+ *  - Press Kit !
+ *  - Promotional photos ?
  *  - Video section ?
  *  - contact details : finish form (use https://sendgrid.com/pricing/)
- *  - host on GitHub ?
  */
 
 export type SectionId = typeof SectionId[keyof typeof SectionId];
@@ -76,22 +76,22 @@ export const heroData: Hero = {
   description: (
     <>
     <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-      I'm a French <strong className="text-stone-100">electronic music producer</strong> and DJ, 
+      French <strong className="text-stone-100">electronic music producer</strong> and DJ, 
       focusing on <strong className="text-stone-100">Deep Dubstep/Dub</strong> music, mostly at 140bpm.
     </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        So far I've released music on <a href="https://noizionrecordz.bandcamp.com/">Noizion Recordz</a> (FR) 
+        Music released on <a href="https://noizionrecordz.bandcamp.com/">Noizion Recordz</a> (FR) 
         and <a href="https://fatkidonfire.com/label/">FatKidOnFire</a> (NL/UK).
       </p>
     </>
   ),
   actions: [
-    {
-      href: '/assets/presskit.pdf',//TODO
-      text: 'Press kit',
-      primary: true,
-      Icon: DownloadIcon,
-    },
+    // {
+    //   href: '/assets/presskit.pdf',//TODO
+    //   text: 'Press kit',
+    //   primary: true,
+    //   Icon: DownloadIcon,
+    // },
     {
       href: `#${SectionId.Contact}`,
       text: 'Contact',
@@ -105,13 +105,11 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Musician since childhood, Hippoflip used to play the saxophone in several marching and 
-  jazz bands. Over the years, he trained in electronic music production by experimenting and learning from 
-  educational content producers such as Mr. Bill or Tom Cosm. Now, he produces a blend of dub/dubstep influenced 
-  by Jazz, Hip-hop and Drum'n Bass. Passionate about soundsystem culture, he draws inspiration from the 
-  contemporary Deep Dubstep scene (Kaiju, DE-TÜ, Ternion Sound, Egoless, Quasar, Kercha, ...). In early 2022 
-  he signs his debut EP entitled “Monsters” on Noizion Recordz, following with a four track release on 
-  FatKidOnFire (FKOFd058).`,
+  description: `Musician since childhood, Hippoflip used to play the saxophone in several marching and jazz bands. 
+  Over the years, he trained in electronic music production by experimenting and learning from educational content 
+  producers such as Mr. Bill or Tom Cosm. Now, he produces a blend of dub/dubstep influenced by Jazz, Hip-hop, 
+  Drum'n Bass and Psychedelic bass music. Passionate about soundsystem culture, he draws inspiration from the 
+  contemporary Deep Dubstep scene : Ternion Sound, Egoless, Quasar, Kercha, FLO, ...`,
   aboutItems: [
     {label: 'Location', text: 'Paris, FR', Icon: MapIcon},
     {label: 'Age', text: '30', Icon: CalendarIcon},
@@ -168,19 +166,13 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
-      name: 'Hubwar (head of Noizion Recordz)', //TODO: translate and add photo
-      text: 'L\'originalité des compositions, sa précision dans le sound-design et ses clins d\'oeil à la culture « sound-system » m\'ont convaincu de signer Hippoflip dès la première écoute.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
+      name: 'Hubwar (head of Noizion Recordz)',
+      text: 'Hippoflip produces novel compositions and precise sound-designs, while staying true to « sound-system culture ». This convinced me to sign his EP as soon as I heard it.',
+      image: hubwarImage,
     },
     {
-      name: 'Laurent Garnier', //TODO: translate and add photo
-      text: 'TODO: get one from FKOF maybe ?',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
-    },
-    {
-      name: 'Someone else',
-      text: 'TODO: maybe even Andrew ? idk, could work',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
+      name: 'Laurent Garnier',
+      text: 'That\'s a really cool EP, I love it ! (about Monsters EP)',
     },
   ],
 };
