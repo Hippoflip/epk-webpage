@@ -153,8 +153,8 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     title: 'Guest mix @ Subtle Radio',
-    description: 'TBA',
-    url: 'https://soundcloud.com/',
+    description: 'November 13th 2022',
+    url: 'https://soundcloud.com/subtleradio/fkof-sessions-w-hippoflip-subtle-radio-13112022',
     image: porfolioImage4,
   },
 ];
