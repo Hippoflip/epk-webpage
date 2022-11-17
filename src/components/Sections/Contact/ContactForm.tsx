@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {FC, memo, useCallback, useMemo, useState} from 'react';
 
 interface FormData {
@@ -29,13 +30,19 @@ const ContactForm: FC = memo(() => {
     [data],
   );
 
+  const [successMessage, setSuccessMessage] = useState("");
+
   const handleSendMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      /**
-       * This is a good starting point to wire up your form submission logic
-       * */
-      console.log('Data to send: ', data);
+      axios
+        .post("https://eojh1y0wn8xcczz.m.pipedream.net", data)
+        .then(() => {
+          setSuccessMessage(
+            `An e-mail has been sent. Merci !`
+          );
+        })
+        .catch((e: any) => console.error(e));
     },
     [data],
   );
@@ -70,6 +77,7 @@ const ContactForm: FC = memo(() => {
         type="submit">
         Send Message
       </button>
+      {successMessage && <p>{successMessage}</p>}
     </form>
   );
 });
