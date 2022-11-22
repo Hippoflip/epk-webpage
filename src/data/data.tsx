@@ -14,6 +14,7 @@ import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
 import profilepic from '../images/hippoflip.jpg';
 import testimonialImage from '../images/crowd.webp'; //TODO: credit @tijsvl on Unsplash
 import hubwarImage from '../images/testimonials/hubwar.jpg'
+import korruptImage from '../images/testimonials/korrupt.jpg'
 import {
   About,
   ContactSection,
@@ -171,8 +172,13 @@ export const testimonial: TestimonialSection = {
       image: hubwarImage,
     },
     {
-      name: 'Laurent Garnier',
-      text: 'That\'s a really cool EP, I love it ! (about Monsters EP)',
+      name: 'Laurent Garnier (about Monsters EP)',
+      text: 'That\'s a really cool EP I love it, thanks for sharing !',
+    },
+    {
+      name: 'Korrupt (A&R Manager of FatKidOnFire)',
+      text: 'Parisian Hippoflip pushes the limits of soundsystem music. He transformed four \'work in progress\' cuts into stellar journeys through rhythm and bassweight. He\'s a critical part of our extended release catalogue over at FatKidOnFire.',
+      image: korruptImage,
     },
   ],
 };
