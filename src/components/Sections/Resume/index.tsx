@@ -13,6 +13,9 @@ const Resume: FC = memo(() => {
       <div className="flex flex-col divide-y-2 divide-neutral-300">
         <ResumeSection title="Music">
           <p>
+          <iframe width="100%" height="166" scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1689568737&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+          </p>
+          <p>
             <iframe width="100%" height="166" scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1358193403&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
           </p>
           <p>
