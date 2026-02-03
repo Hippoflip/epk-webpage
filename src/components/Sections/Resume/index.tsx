@@ -13,12 +13,32 @@ const Resume: FC = memo(() => {
       <div className="flex flex-col divide-y-2 divide-neutral-300">
         <ResumeSection title="Music">
           <p>
-            <iframe width="100%" height="166" scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1358193403&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            <iframe
+              allow="autoplay"
+              height="166"
+              scrolling="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1358193403&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              width="100%"></iframe>
           </p>
           <p>
-            <iframe width="100%" height="166" scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1242461998&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-            <iframe width="100%" height="166" scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1242461821&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-            <iframe width="100%" height="166" scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1239784300&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            <iframe
+              allow="autoplay"
+              height="166"
+              scrolling="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1242461998&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              width="100%"></iframe>
+            <iframe
+              allow="autoplay"
+              height="166"
+              scrolling="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1242461821&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              width="100%"></iframe>
+            <iframe
+              allow="autoplay"
+              height="166"
+              scrolling="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1239784300&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              width="100%"></iframe>
           </p>
           {/* {education.map((item, index) => (
             <TimelineItem item={item} key={`${item.title}-${index}`} />

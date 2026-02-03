@@ -30,19 +30,17 @@ const ContactForm: FC = memo(() => {
     [data],
   );
 
-  const [successMessage, setSuccessMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSendMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       axios
-        .post("https://eojh1y0wn8xcczz.m.pipedream.net", data)
+        .post('https://eojh1y0wn8xcczz.m.pipedream.net', data)
         .then(() => {
-          setSuccessMessage(
-            `An e-mail has been sent. Merci !`
-          );
+          setSuccessMessage(`An e-mail has been sent. Merci !`);
         })
-        .catch((e: any) => console.error(e));
+        .catch((e: unknown) => console.error(e));
     },
     [data],
   );
