@@ -1,20 +1,22 @@
-import {
-  CalendarIcon,
-  //DownloadIcon,
-  MapIcon,
-  MusicNoteIcon,
-  OfficeBuildingIcon,
-} from '@heroicons/react/outline';
+import {BuildingOfficeIcon, CalendarIcon, MapIcon, MusicalNoteIcon} from '@heroicons/react/24/outline';
 
-import heroImage from '../images/vinyls.webp'; //TODO: credit @minkmingle on Unsplash
+import AppleMusicIcon from '../components/Icon/AppleMusicIcon';
+import BandCampIcon from '../components/Icon/BandCampIcon';
+import BeatportIcon from '../components/Icon/BeatportIcon';
+import FacebookIcon from '../components/Icon/FacebookIcon';
+import GithubIcon from '../components/Icon/GithubIcon';
+import InstagramIcon from '../components/Icon/InstagramIcon';
+import SoundCloudIcon from '../components/Icon/SoundCloudIcon';
+import SpotifyIcon from '../components/Icon/SpotifyIcon';
+import testimonialImage from '../images/crowd.webp'; //TODO: credit @tijsvl on Unsplash
+import profilepic from '../images/hippoflip.jpg';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
 import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import profilepic from '../images/hippoflip.jpg';
-import testimonialImage from '../images/crowd.webp'; //TODO: credit @tijsvl on Unsplash
-import hubwarImage from '../images/testimonials/hubwar.jpg'
-import korruptImage from '../images/testimonials/korrupt.jpg'
+import hubwarImage from '../images/testimonials/hubwar.jpg';
+import korruptImage from '../images/testimonials/korrupt.jpg';
+import heroImage from '../images/vinyls.webp'; //TODO: credit @minkmingle on Unsplash
 import {
   About,
   ContactSection,
@@ -27,14 +29,6 @@ import {
   TestimonialSection,
   TimelineItem,
 } from './dataDef';
-import AppleMusicIcon from '../components/Icon/AppleMusicIcon';
-import BeatportIcon from '../components/Icon/BeatportIcon';
-import BandCampIcon from '../components/Icon/BandCampIcon';
-import SoundCloudIcon from '../components/Icon/SoundCloudIcon';
-import SpotifyIcon from '../components/Icon/SpotifyIcon';
-import FacebookIcon from '../components/Icon/FacebookIcon';
-import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
 
 /**
  * Page meta data
@@ -58,7 +52,7 @@ export const SectionId = {
   Testimonials: 'testimonials',
 } as const;
 /**
- * TODO list : 
+ * TODO list :
  *  - Better hero image
  *  - Press Kit !
  *  - Promotional photos ?
@@ -66,7 +60,7 @@ export const SectionId = {
  *  - contact details : finish form (use https://sendgrid.com/pricing/)
  */
 
-export type SectionId = typeof SectionId[keyof typeof SectionId];
+export type SectionId = (typeof SectionId)[keyof typeof SectionId];
 
 /**
  * Hero section
@@ -76,13 +70,13 @@ export const heroData: Hero = {
   name: `Hippoflip`,
   description: (
     <>
-    <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-      French <strong className="text-stone-100">electronic music producer</strong> and DJ, 
-      focusing on <strong className="text-stone-100">Deep Dubstep/Dub</strong> music, mostly at 140bpm.
-    </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        Music released on <a href="https://noizionrecordz.bandcamp.com/">Noizion Recordz</a> (FR) 
-        and <a href="https://fatkidonfire.com/label/">FatKidOnFire</a> (NL/UK).
+        French <strong className="text-stone-100">electronic music producer</strong> and DJ, focusing on{' '}
+        <strong className="text-stone-100">Deep Dubstep/Dub</strong> music, mostly at 140bpm.
+      </p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+        Music released on <a href="https://noizionrecordz.bandcamp.com/">Noizion Recordz</a> (FR) and{' '}
+        <a href="https://fatkidonfire.com/label/">FatKidOnFire</a> (NL/UK).
       </p>
     </>
   ),
@@ -101,6 +95,11 @@ export const heroData: Hero = {
   ],
 };
 
+const now: Date = new Date();
+const currentYear: number = now.getFullYear();
+const offset: number = now.getMonth() > 8 ? 0 : -1;
+const age: number = currentYear - 1992 + offset;
+
 /**
  * About section
  */
@@ -113,9 +112,9 @@ export const aboutData: About = {
   contemporary Deep Dubstep scene : Ternion Sound, Egoless, Quasar, Kercha, FLO, ...`,
   aboutItems: [
     {label: 'Location', text: 'Paris, FR', Icon: MapIcon},
-    {label: 'Age', text: '30', Icon: CalendarIcon},
-    {label: 'Genres', text: 'Deep Dubstep, Deep Dub, Psy Dub', Icon: MusicNoteIcon},
-    {label: 'Labels', text: 'Noizion Recordz, FatKidOnFire', Icon: OfficeBuildingIcon},
+    {label: 'Age', text: String(age), Icon: CalendarIcon},
+    {label: 'Genres', text: 'Deep Dubstep, Deep Dub, Psy Dub', Icon: MusicalNoteIcon},
+    {label: 'Labels', text: 'Noizion Recordz, FatKidOnFire', Icon: BuildingOfficeIcon},
   ],
 };
 
@@ -173,11 +172,11 @@ export const testimonial: TestimonialSection = {
     },
     {
       name: 'Laurent Garnier (about Monsters EP)',
-      text: 'That\'s a really cool EP I love it, thanks for sharing !',
+      text: "That's a really cool EP I love it, thanks for sharing !",
     },
     {
       name: 'Korrupt (A&R Manager of FatKidOnFire)',
-      text: 'Parisian Hippoflip pushes the limits of soundsystem music. He transformed four \'work in progress\' cuts into stellar journeys through rhythm and bassweight. He\'s a critical part of our extended release catalogue over at FatKidOnFire.',
+      text: "Parisian Hippoflip pushes the limits of soundsystem music. He transformed four 'work in progress' cuts into stellar journeys through rhythm and bassweight. He's a critical part of our extended release catalogue over at FatKidOnFire.",
       image: korruptImage,
     },
   ],
@@ -189,7 +188,8 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Feel free to contact me on any platform, although I would be more reactive to SoundCloud or Instagram messages.',
+  description:
+    'Feel free to contact me on any platform, although I would be more reactive to SoundCloud or Instagram messages.',
   items: [
     // {
     //   type: ContactType.Email,
