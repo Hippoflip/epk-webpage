@@ -16,23 +16,31 @@ const Resume: FC = memo(() => {
             <iframe
               allow="autoplay"
               height="166"
-              scrolling="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1358193403&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2248504964&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
               width="100%"></iframe>
           </p>
           <p>
             <iframe
               allow="autoplay"
               height="166"
-              scrolling="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1242461998&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1689568737&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
               width="100%"></iframe>
+          </p>
+          <p>
             <iframe
               allow="autoplay"
               height="166"
-              scrolling="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1242461821&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1922931497&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
               width="100%"></iframe>
+          </p>
+          <p>
+            <iframe
+              allow="autoplay"
+              height="166"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1358193403&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              width="100%"></iframe>
+          </p>
+          <p>
             <iframe
               allow="autoplay"
               height="166"

@@ -14,6 +14,10 @@ import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
 import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
+import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
+import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
+import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
+import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 import hubwarImage from '../images/testimonials/hubwar.jpg';
 import korruptImage from '../images/testimonials/korrupt.jpg';
 import heroImage from '../images/vinyls.webp'; //TODO: credit @minkmingle on Unsplash
@@ -53,7 +57,6 @@ export const SectionId = {
 } as const;
 /**
  * TODO list :
- *  - Better hero image
  *  - Press Kit !
  *  - Promotional photos ?
  *  - Video section ?
@@ -75,8 +78,8 @@ export const heroData: Hero = {
         <strong className="text-stone-100">Deep Dubstep/Dub</strong> music, mostly at 140bpm.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        Music released on <a href="https://noizionrecordz.bandcamp.com/">Noizion Recordz</a> (FR) and{' '}
-        <a href="https://fatkidonfire.com/label/">FatKidOnFire</a> (NL/UK).
+        <strong className="text-stone-100">Music released on </strong>
+        Noizion Recordz (FR), FatKidOnFire (NL/UK), Locus Sound (UK), Cimmerian Records (US), Dubstep France (FR).
       </p>
     </>
   ),
@@ -113,8 +116,12 @@ export const aboutData: About = {
   aboutItems: [
     {label: 'Location', text: 'Paris, FR', Icon: MapIcon},
     {label: 'Age', text: String(age), Icon: CalendarIcon},
-    {label: 'Genres', text: 'Deep Dubstep, Deep Dub, Psy Dub', Icon: MusicalNoteIcon},
-    {label: 'Labels', text: 'Noizion Recordz, FatKidOnFire', Icon: BuildingOfficeIcon},
+    {label: 'Genres', text: 'Deep Dubstep, Deep Dub, Bass Music', Icon: MusicalNoteIcon},
+    {
+      label: 'Labels',
+      text: 'Noizion Recordz, FatKidOnFire, Locus Sound, Cimmerian Records, Dubstep France',
+      Icon: BuildingOfficeIcon,
+    },
   ],
 };
 
@@ -156,6 +163,30 @@ export const portfolioItems: PortfolioItem[] = [
     description: 'November 13th 2022',
     url: 'https://soundcloud.com/subtleradio/fkof-sessions-w-hippoflip-subtle-radio-13112022',
     image: porfolioImage4,
+  },
+  {
+    title: 'Featured on LOCUSLP005',
+    description: 'December 15th 2023 on Locus Sound',
+    url: 'https://locussounduk.bandcamp.com/album/compilation-vol-5-locuslp005',
+    image: porfolioImage5,
+  },
+  {
+    title: 'Trade Route EP',
+    description: 'October 7th 2022 on Cimmerian Records',
+    url: 'https://cimmerianrecords.bandcamp.com/album/trade-route-ep',
+    image: porfolioImage6,
+  },
+  {
+    title: 'Featured on French Ruff',
+    description: 'December 12th 2025 on Noizion Records',
+    url: 'https://noizionrecordz.bandcamp.com/album/french-ruff-various-artists',
+    image: porfolioImage7,
+  },
+  {
+    title: 'Expropriate // Appropriate',
+    description: 'January 15th 2026 - Self release',
+    url: 'https://hippoflip.bandcamp.com/album/expropriate-appropriate',
+    image: porfolioImage8,
   },
 ];
 
